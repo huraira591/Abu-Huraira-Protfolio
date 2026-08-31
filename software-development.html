@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Development Services | Abu Huraira</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .back-home {
+            color: #f8fafc;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+            color: #38bdf8;
+        }
+
+        .header-section {
+            padding: 140px 10% 40px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(56, 189, 248, 0.05) 0%, rgba(15, 23, 42, 0) 100%);
+        }
+
+        .header-section h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .header-section h1 span {
+            color: #38bdf8;
+        }
+
+        .header-section p {
+            max-width: 750px;
+            margin: 0 auto;
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 40px 10%;
+        }
+
+        .stat-box {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .stat-box i {
+            font-size: 32px;
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .stat-box h3 {
+            font-size: 28px;
+            color: #f8fafc;
+        }
+
+        .stat-box p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .content-section {
+            padding: 40px 10% 80px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            margin-bottom: 30px;
+            color: #f8fafc;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: #38bdf8;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* Offers Grid */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .offer-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #38bdf8;
+            transition: 0.3s;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .offer-card i {
+            font-size: 28px;
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .offer-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #f8fafc;
+        }
+
+        .offer-card p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Live Demos Section */
+        .demo-box {
+            background: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .demo-box:hover {
+            border-color: #38bdf8;
+        }
+
+        .demo-info h4 {
+            font-size: 20px;
+            color: #f8fafc;
+            margin-bottom: 5px;
+        }
+
+        .demo-info p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #38bdf8;
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            background-color: #0ea5e9;
+            transform: translateY(-2px);
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .cta-banner h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .cta-banner p {
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #090d16;
+            color: #94a3b8;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 28px;
+            }
+            .demo-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Abu Huraira.</a>
+        <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Home এ ফিরে যান</a>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header-section">
+        <h1>Software Development <span>Solutions</span></h1>
+        <p>দীর্ঘ ৪ বছর ধরে আধুনিক সফটওয়্যার ডেভেলপমেন্ট ও স্নাতক ডিগ্রি অর্জনের অভিজ্ঞতা নিয়ে আমরা তৈরি করছি শতভাগ নিরাপদ ও কাস্টমাইজড বিজনেস সফটওয়্যার।</p>
+    </header>
+
+    <!-- Key Stats -->
+    <div class="stats-grid">
+        <div class="stat-box">
+            <i class="fa-solid fa-calendar-check"></i>
+            <h3>৪+ বছর</h3>
+            <p>পেশাদার কাজের অভিজ্ঞতা</p>
+        </div>
+        <div class="stat-box">
+            <i class="fa-solid fa-building-circle-check"></i>
+            <h3>১,৩৫৬+</h3>
+            <p>সক্রিয় প্রতিষ্ঠান ও ক্লায়েন্ট</p>
+        </div>
+        <div class="stat-box">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h3>স্নাতক ডিগ্রি</h3>
+            <p>সফটওয়্যার ডেভেলপমেন্ট ব্যাকগ্রাউন্ড</p>
+        </div>
+        <div class="stat-box">
+            <i class="fa-solid fa-headset"></i>
+            <h3>২৪/৭</h3>
+            <p>লাইফটাইম ফ্রি সাপোর্ট</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        
+        <!-- Offers Section -->
+        <h2 class="section-title">ক্লায়েন্টদের জন্য আমার বিশেষ অফারসমূহ</h2>
+        <div class="offers-grid">
+            <div class="offer-card">
+                <i class="fa-solid fa-sliders"></i>
+                <h4>১০০% কাস্টমাইজড সফটওয়্যার</h4>
+                <p>আপনার ব্যবসার চাহিদা এবং পছন্দ অনুযায়ী যেভাবে চাইবেন, ঠিক সেভাবেই ফিচার ও ইন্টারফেস তৈরি করে দেওয়া হবে।</p>
+            </div>
+
+            <div class="offer-card">
+                <i class="fa-solid fa-globe"></i>
+                <h4>গ্লোবাল অ্যাক্সেস ও রিমোট ট্র্যাকিং</h4>
+                <p>আপনি বিশ্বের যেকোনো দেশে অবস্থান করলেও যেকোনো সময় মোবাইল বা ল্যাপটপ থেকে সফটওয়্যারের সম্পূর্ণ হিসাব-নিকাশ দেখতে পারবেন।</p>
+            </div>
+
+            <div class="offer-card">
+                <i class="fa-solid fa-server"></i>
+                <h4>পার্সোনাল ক্লাউড সার্ভার সুবিধা</h4>
+                <p>সার্ভার কেনা বা সেটআপের ঝামেলা ছাড়াই আমার ডেডিকেটেড হাই-স্পিড সার্ভারে মাসিক ভাড়ার চুক্তিতে সফটওয়্যার চালানোর সুযোগ।</p>
+            </div>
+
+            <div class="offer-card">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <h4>লাইফটাইম ফ্রি সাপোর্ট</h4>
+                <p>সফটওয়্যারে কখনো কোনো টেকনিক্যাল সমস্যা হলে সার্বক্ষণিক ২৪ ঘণ্টার মধ্যে দ্রুত সমাধান ও ফ্রি সাপোর্ট পাবেন।</p>
+            </div>
+        </div>
+
+        <!-- Live Software Links Section -->
+        <h2 class="section-title">সফটওয়্যারের লাইভ ডেমো ও লিংক</h2>
+        
+        <!-- Demo Item 1 -->
+        <div class="demo-box">
+            <div class="demo-info">
+                <h4>Cement Business Management System</h4>
+                <p>সিমেন্ট সরবরাহ, ইনভেন্টরি, ডিলার হিসাব ও স্টক ম্যানেজমেন্টের পূর্ণাঙ্গ ক্লাউড সফটওয়্যার।</p>
+            </div>
+            <!-- এখানে আপনার লিংকটি বসিয়ে দিন -->
+            <a href="https://your-cement-software-link.com" target="_blank" class="btn btn-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> সফটওয়্যার ভিজিট করুন
+            </a>
+        </div>
+
+        <!-- Demo Item 2 -->
+        <div class="demo-box">
+            <div class="demo-info">
+                <h4>7up Operations & Inventory System</h4>
+                <p>ডিস্ট্রিবিউশন, ডেলিভারি ট্র্যাকিং ও দৈনিক সেলস ক্যালকুলেশনের স্বয়ংক্রিয় এন্টারপ্রাইজ সিস্টেম।</p>
+            </div>
+            <!-- এখানে আপনার লিংকটি বসিয়ে দিন -->
+            <a href="https://your-7up-software-link.com" target="_blank" class="btn btn-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> সফটওয়্যার ভিজিট করুন
+            </a>
+        </div>
+
+        <!-- Call To Action -->
+        <div class="cta-banner">
+            <h2>আপনার ব্যবসার জন্য সফটওয়্যার দরকার?</h2>
+            <p>আপনার চাহিদা অনুযায়ী কাস্টমাইজড সফটওয়্যার ও মাসিক সার্ভার ভাড়ার প্যাকেজ নিয়ে সরাসরি হোয়াটসঅ্যাপে আলোচনা করুন।</p>
+            <a href="https://wa.me/8801868601971" target="_blank" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> সরাসরি হোয়াটসঅ্যাপে মেসেজ দিন
+            </a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Abu Huraira. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
